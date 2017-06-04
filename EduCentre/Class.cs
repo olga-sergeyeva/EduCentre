@@ -22,8 +22,8 @@ namespace EduCentre
         public int GroupId;
         public int TeacherId;
         public string ClassName;
-        public DateTime ClassDate;
-        public DateTime ClassTime;
+        //public DateTime ClassDate;
+        //public DateTime ClassTime;
         public int Classroom;
     }
 }

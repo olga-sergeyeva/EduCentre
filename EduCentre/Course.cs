@@ -24,8 +24,8 @@ namespace EduCentre
         public string CourseType;
         public int Duration;
         public double Price;
-        public DateTime StartDate;
-        public DateTime EndDate;
+       // public DateTime StartDate;
+        //public DateTime EndDate;
         public List<Teacher> Teachers;
         public List<Group> Groups;
         public List<Class> Classes;

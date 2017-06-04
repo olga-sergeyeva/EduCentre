@@ -13,32 +13,94 @@ namespace EduCentre
 {
     public partial class Form1 : Form
     {
-        private OleDbConnection connection = new OleDbConnection();
+        private OleDbConnection Connection = new OleDbConnection();
 
         public Form1()
         {
             InitializeComponent();
-            connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Visual Studio 2015\Projects\EduCentre\EdCentre.accdb;
+            Connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Visual Studio 2015\Projects\EduCentre\EdCentre.accdb;
 Persist Security Info=False;";
         }
 
         private void buttonEnter_Click(object sender, EventArgs e)
         {
-            connection.Open();
-            OleDbCommand command = new OleDbCommand();
-            command.Connection = connection;
-            command.CommandText = "SELECT * FROM authorizations WHERE login = '" + textBoxLogin.Text + "' and password = '" + textBoxPassword.Text + "'";
-            OleDbDataReader reader = command.ExecuteReader();
+            var Id = 0;
+
+            Connection.Open();
+            OleDbCommand Command = new OleDbCommand();
+            Command.Connection = Connection;
+            Command.CommandText = "SELECT authorization_id FROM authorizations WHERE login = '" + textBoxLogin.Text + "' and password = '" + textBoxPassword.Text + "'";
+
+            OleDbDataReader Reader = Command.ExecuteReader();
             int count = 0;
-            while (reader.Read())
+            while (Reader.Read())
             {
                 count++;
             }
 
-            reader.Close();
+            Reader.Close();
+
             if (count == 1)
             {
-                MessageBox.Show("Логин и пароль введены правильно");
+                Id = Int32.Parse(Command.ExecuteScalar().ToString());
+                MessageBox.Show(Id.ToString());
+
+                bool SearchSuccessfull;
+                OleDbCommand CommandSearchInClients = new OleDbCommand();
+                OleDbCommand CommandSearchInTeachers = new OleDbCommand();
+                OleDbCommand CommandSearchInManagers = new OleDbCommand();
+
+                CommandSearchInClients.Connection = Connection;
+                CommandSearchInTeachers.Connection = Connection;
+                CommandSearchInManagers.Connection = Connection;
+                CommandSearchInClients.CommandText = "SELECT * FROM clients WHERE authorization_id = " + Id + "";
+                CommandSearchInTeachers.CommandText = "SELECT * FROM teachers WHERE authorization_id = " + Id + "";
+                CommandSearchInManagers.CommandText = "SELECT * FROM managers WHERE authorization_id = " + Id + "";
+                OleDbDataReader ReaderClients = CommandSearchInClients.ExecuteReader();
+                SearchSuccessfull = false;
+                while (ReaderClients.Read())
+                {
+                    SearchSuccessfull = true;
+                }
+
+                if (SearchSuccessfull == true)
+                {
+                    ClientMainForm ClientMForm = new ClientMainForm();
+                    this.Hide();
+                    ClientMForm.Show();
+                }
+                ReaderClients.Close();
+
+                OleDbDataReader ReaderTeachers = CommandSearchInTeachers.ExecuteReader();
+                SearchSuccessfull = false;
+                while (ReaderTeachers.Read())
+                {
+                    SearchSuccessfull = true;
+                }
+
+                if (SearchSuccessfull == true)
+                {
+                    TeacherMainForm TeacherMForm = new TeacherMainForm();
+                    this.Hide();
+                    TeacherMForm.Show();
+                }
+                ReaderTeachers.Close();
+
+                OleDbDataReader ReaderManagers = CommandSearchInManagers.ExecuteReader();
+                SearchSuccessfull = false;
+                while (ReaderManagers.Read())
+                {
+                    SearchSuccessfull = true;
+                }
+
+                if (SearchSuccessfull == true)
+                {
+                    ManagerMainForm ManagerMForm = new ManagerMainForm();
+                    this.Hide();
+                    ManagerMForm.Show();
+                }
+           
+                ReaderManagers.Close();
             }
 
             if (count == 0)
@@ -46,7 +108,7 @@ Persist Security Info=False;";
                 MessageBox.Show("Неверный логин или пароль, попробуйте заново");
             }
 
-            connection.Close();
+            Connection.Close();
         }
     }
 }

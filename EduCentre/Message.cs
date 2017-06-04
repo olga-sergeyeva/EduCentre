@@ -15,14 +15,14 @@ namespace EduCentre
             this.Reciever = Receiver;
             this.Text = Text;
             this.Status = Status;
-
         }
+
         private int MessageId;
         public int Sender;
         public int Reciever;
         public string Text;
-        public DateTime MessageDate;
-        public DateTime MessageTime;
+       // public DateTime MessageDate;
+        //public DateTime MessageTime;
         public string Status;
     }
 }
