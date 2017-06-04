@@ -27,7 +27,7 @@ Persist Security Info=False;";
             connection.Open();
             OleDbCommand command = new OleDbCommand();
             command.Connection = connection;
-            command.CommandText = "SELECT * FROM AUTHORIZATIONS WHERE LOGIN = '" + textBoxLogin.Text + "' and PASSWORD = '" + textBoxPassword.Text + "'";
+            command.CommandText = "SELECT * FROM authorizations WHERE login = '" + textBoxLogin.Text + "' and password = '" + textBoxPassword.Text + "'";
             OleDbDataReader reader = command.ExecuteReader();
             int count = 0;
             while (reader.Read())
@@ -43,7 +43,7 @@ Persist Security Info=False;";
 
             if (count == 0)
             {
-                MessageBox.Show("Логин или пароль введены не верно");
+                MessageBox.Show("Неверный логин или пароль, попробуйте заново");
             }
 
             connection.Close();
