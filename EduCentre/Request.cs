@@ -11,8 +11,8 @@ namespace EduCentre
         private int RequestId;
         public int CourseId;
         public string Text;
-        public DateTime MessageDate;
-        public DateTime MessageTime;
+        public DateTime RequestDate;
+        public DateTime RequestTime;
         public string Status;
     }
 }
