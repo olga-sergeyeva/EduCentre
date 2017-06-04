@@ -41,7 +41,7 @@
             // buttonRequests
             // 
             this.buttonRequests.Location = new System.Drawing.Point(15, 63);
-            this.buttonRequests.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonRequests.Margin = new System.Windows.Forms.Padding(6);
             this.buttonRequests.Name = "buttonRequests";
             this.buttonRequests.Size = new System.Drawing.Size(264, 44);
             this.buttonRequests.TabIndex = 0;
@@ -52,17 +52,18 @@
             // buttonClients
             // 
             this.buttonClients.Location = new System.Drawing.Point(15, 121);
-            this.buttonClients.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonClients.Margin = new System.Windows.Forms.Padding(6);
             this.buttonClients.Name = "buttonClients";
             this.buttonClients.Size = new System.Drawing.Size(264, 44);
             this.buttonClients.TabIndex = 1;
             this.buttonClients.Text = "Клиенты";
             this.buttonClients.UseVisualStyleBackColor = true;
+            this.buttonClients.Click += new System.EventHandler(this.buttonClients_Click);
             // 
             // buttonTeachers
             // 
             this.buttonTeachers.Location = new System.Drawing.Point(15, 178);
-            this.buttonTeachers.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonTeachers.Margin = new System.Windows.Forms.Padding(6);
             this.buttonTeachers.Name = "buttonTeachers";
             this.buttonTeachers.Size = new System.Drawing.Size(264, 44);
             this.buttonTeachers.TabIndex = 2;
@@ -72,7 +73,7 @@
             // buttonCourses
             // 
             this.buttonCourses.Location = new System.Drawing.Point(15, 236);
-            this.buttonCourses.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonCourses.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCourses.Name = "buttonCourses";
             this.buttonCourses.Size = new System.Drawing.Size(264, 44);
             this.buttonCourses.TabIndex = 3;
@@ -82,7 +83,7 @@
             // buttonGroups
             // 
             this.buttonGroups.Location = new System.Drawing.Point(15, 294);
-            this.buttonGroups.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonGroups.Margin = new System.Windows.Forms.Padding(6);
             this.buttonGroups.Name = "buttonGroups";
             this.buttonGroups.Size = new System.Drawing.Size(264, 44);
             this.buttonGroups.TabIndex = 4;
@@ -92,7 +93,7 @@
             // buttonSchedule
             // 
             this.buttonSchedule.Location = new System.Drawing.Point(15, 351);
-            this.buttonSchedule.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonSchedule.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSchedule.Name = "buttonSchedule";
             this.buttonSchedule.Size = new System.Drawing.Size(264, 44);
             this.buttonSchedule.TabIndex = 5;
@@ -102,7 +103,7 @@
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(15, 409);
-            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button7.Margin = new System.Windows.Forms.Padding(6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(264, 44);
             this.button7.TabIndex = 6;
@@ -112,7 +113,7 @@
             // buttonBack
             // 
             this.buttonBack.Location = new System.Drawing.Point(15, 467);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonBack.Margin = new System.Windows.Forms.Padding(6);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(264, 44);
             this.buttonBack.TabIndex = 7;
@@ -134,7 +135,7 @@
             this.Controls.Add(this.buttonClients);
             this.Controls.Add(this.buttonRequests);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ManagerMainForm";
             this.Text = "ManagerMainForm";
             this.ResumeLayout(false);

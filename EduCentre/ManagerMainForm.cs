@@ -29,5 +29,12 @@ namespace EduCentre
             ManagerRequests.Show();
 
         }
+
+        private void buttonClients_Click(object sender, EventArgs e)
+        {
+            ManagerClientsForm ManagerClients = new ManagerClientsForm();
+            this.Hide();
+            ManagerClients.Show();
+        }
     }
 }

@@ -39,7 +39,7 @@
             // buttonEnter
             // 
             this.buttonEnter.Location = new System.Drawing.Point(232, 311);
-            this.buttonEnter.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.buttonEnter.Margin = new System.Windows.Forms.Padding(6);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(138, 44);
             this.buttonEnter.TabIndex = 0;
@@ -81,7 +81,7 @@
             // textBoxLogin
             // 
             this.textBoxLogin.Location = new System.Drawing.Point(232, 183);
-            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxLogin.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(206, 33);
             this.textBoxLogin.TabIndex = 4;
@@ -89,8 +89,9 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(232, 242);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(206, 33);
             this.textBoxPassword.TabIndex = 5;
             // 
@@ -106,7 +107,7 @@
             this.Controls.Add(this.labelAuthorization);
             this.Controls.Add(this.buttonEnter);
             this.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

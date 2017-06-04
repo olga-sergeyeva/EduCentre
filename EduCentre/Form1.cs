@@ -43,7 +43,6 @@ Persist Security Info=False;";
             if (count == 1)
             {
                 Id = Int32.Parse(Command.ExecuteScalar().ToString());
-                MessageBox.Show(Id.ToString());
 
                 bool SearchSuccessfull;
                 OleDbCommand CommandSearchInClients = new OleDbCommand();
