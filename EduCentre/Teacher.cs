@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EduCentre
 {
-    class Client
+    class Teacher
     {
-        public readonly int ClientId;
+        public readonly int TeacherId;
         public string LastName;
         public string FirstName;
         public string SecondName;
