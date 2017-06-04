@@ -8,6 +8,14 @@ namespace EduCentre
 {
     class Request
     {
+        public Request(int RequestId, int CourseId, string Text, string Status)
+        {
+            this.RequestId = RequestId;
+            this.CourseId = CourseId;
+            this.Text = Text;
+            this.Status = Status;
+        }
+
         private int RequestId;
         public int CourseId;
         public string Text;

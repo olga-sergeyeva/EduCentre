@@ -8,6 +8,15 @@ namespace EduCentre
 {
     class Message
     {
+        public Message(int MessageId, int Sender, int Receiver, string Text, string Status)
+        {
+            this.MessageId = MessageId;
+            this.Sender = Sender;
+            this.Reciever = Receiver;
+            this.Text = Text;
+            this.Status = Status;
+
+        }
         private int MessageId;
         public int Sender;
         public int Reciever;

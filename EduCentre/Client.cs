@@ -8,6 +8,16 @@ namespace EduCentre
 {
     class Client
     {
+        public Client(int ClientId, string LastName, string FirstName, string SecondName, string PhoneNumber, string Email)
+        {
+            this.ClientId = ClientId;
+            this.LastName = LastName;
+            this.FirstName = FirstName;
+            this.SecondName = SecondName;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+        }
+
         public readonly int ClientId;
         public string LastName;
         public string FirstName;

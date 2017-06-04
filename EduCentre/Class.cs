@@ -8,7 +8,16 @@ namespace EduCentre
 {
     class Class
     {
-        public int ClassId;
+        public Class(int ClassId, int CourseId, int GroupId, int TeacherId, string ClassName, DateTime ClassDate, DateTime ClassTime, int Classroom)
+        {
+            this.ClassId = ClassId;
+            this.CourseId = CourseId;
+            this.GroupId = GroupId;
+            this.TeacherId = TeacherId;
+            this.ClassName = ClassName;
+            this.Classroom = Classroom;
+        }
+        public readonly int ClassId;
         public int CourseId;
         public int GroupId;
         public int TeacherId;
