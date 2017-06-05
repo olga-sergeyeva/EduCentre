@@ -58,6 +58,7 @@
             this.buttonAddClient.TabIndex = 0;
             this.buttonAddClient.Text = "Добавить нового клиента";
             this.buttonAddClient.UseVisualStyleBackColor = true;
+            this.buttonAddClient.Click += new System.EventHandler(this.buttonAddClient_Click);
             // 
             // buttonEditClient
             // 
@@ -97,6 +98,7 @@
             this.comboBoxClients.Name = "comboBoxClients";
             this.comboBoxClients.Size = new System.Drawing.Size(408, 33);
             this.comboBoxClients.TabIndex = 4;
+            this.comboBoxClients.SelectedIndexChanged += new System.EventHandler(this.comboBoxClients_SelectedIndexChanged);
             // 
             // labelLastName
             // 
@@ -150,6 +152,8 @@
             // 
             // textBoxLastName
             // 
+            this.textBoxLastName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxLastName.Enabled = false;
             this.textBoxLastName.Location = new System.Drawing.Point(353, 93);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxLastName.Name = "textBoxLastName";
@@ -158,6 +162,8 @@
             // 
             // textBoxFirstName
             // 
+            this.textBoxFirstName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxFirstName.Enabled = false;
             this.textBoxFirstName.Location = new System.Drawing.Point(353, 149);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxFirstName.Name = "textBoxFirstName";
@@ -166,6 +172,8 @@
             // 
             // textBoxSecondName
             // 
+            this.textBoxSecondName.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxSecondName.Enabled = false;
             this.textBoxSecondName.Location = new System.Drawing.Point(353, 203);
             this.textBoxSecondName.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxSecondName.Name = "textBoxSecondName";
@@ -174,6 +182,8 @@
             // 
             // textBoxPhoneNumber
             // 
+            this.textBoxPhoneNumber.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxPhoneNumber.Enabled = false;
             this.textBoxPhoneNumber.Location = new System.Drawing.Point(353, 262);
             this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
@@ -182,6 +192,8 @@
             // 
             // textBoxEmail
             // 
+            this.textBoxEmail.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBoxEmail.Enabled = false;
             this.textBoxEmail.Location = new System.Drawing.Point(353, 317);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(6);
             this.textBoxEmail.Name = "textBoxEmail";
@@ -221,7 +233,7 @@
             // 
             this.buttonBack.Location = new System.Drawing.Point(193, 675);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(400, 37);
+            this.buttonBack.Size = new System.Drawing.Size(400, 43);
             this.buttonBack.TabIndex = 18;
             this.buttonBack.Text = "Вернуться в меню";
             this.buttonBack.UseVisualStyleBackColor = true;

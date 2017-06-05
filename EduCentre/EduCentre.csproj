@@ -54,6 +54,7 @@
     <Compile Include="ClientMainForm.Designer.cs">
       <DependentUpon>ClientMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlClients.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="EdCentreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,6 +68,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Group.cs" />
+    <Compile Include="ManagerAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerAddClient.Designer.cs">
+      <DependentUpon>ManagerAddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +105,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerAddClient.resx">
+      <DependentUpon>ManagerAddClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerClientsForm.resx">
       <DependentUpon>ManagerClientsForm.cs</DependentUpon>
