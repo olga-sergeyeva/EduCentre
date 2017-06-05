@@ -12,6 +12,7 @@ namespace EduCentre
 {
     public partial class ManagerEditClientForm : Form
     {
+        ControlClients CtrlClients = new ControlClients();
         public ManagerEditClientForm(string selectedItem)
         {
             InitializeComponent();

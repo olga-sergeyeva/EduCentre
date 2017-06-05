@@ -10,6 +10,8 @@ namespace EduCentre
 {
     class ControlClients
     {
+        private OleDbConnection Connection = new OleDbConnection();
+
         public ControlClients()
         {
             this.Clients = ReadAllClientsFromDB();
@@ -79,6 +81,32 @@ Persist Security Info=False;");
             }
 
             return ListOfClients;
+        }
+
+        public void AddClientToDB(ControlClients CtrlClients,int ClientId, string LastName, string FirstName, string SecondName, string PhoneNumber, string Email)
+        {
+            Connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Visual Studio 2015\Projects\EduCentre\EdCentre.accdb;
+Persist Security Info=False;";
+
+            try
+            {
+                Connection.Open();
+                OleDbCommand CommandInsert = new OleDbCommand();
+                CommandInsert.Connection = Connection;
+                CommandInsert.CommandText = "INSERT INTO clients(last_name, first_name, second_name, phone_number, email) values('" + LastName + "', '" + FirstName + "', '" + SecondName + "', '" + PhoneNumber + "', '" + Email + "')";
+                CommandInsert.ExecuteNonQuery();
+                Client NewClient = new Client(ClientId, LastName, FirstName, SecondName, PhoneNumber, Email);
+                CtrlClients.Clients.Add(NewClient);
+                MessageBox.Show("Клиент добавлен");
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex);
+            }
+
+            Connection.Close();
         }
     }
 }

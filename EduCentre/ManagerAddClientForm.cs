@@ -14,13 +14,10 @@ namespace EduCentre
     public partial class ManagerAddClientForm : Form
     {
         ControlClients CtrlClients = new ControlClients();
-        private OleDbConnection Connection = new OleDbConnection();
+        
         public ManagerAddClientForm()
         {
             InitializeComponent();
-
-            Connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Visual Studio 2015\Projects\EduCentre\EdCentre.accdb;
-Persist Security Info=False;";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -32,25 +29,13 @@ Persist Security Info=False;";
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Connection.Open();
-                OleDbCommand CommandInsert = new OleDbCommand();
-                CommandInsert.Connection = Connection;
-                CommandInsert.CommandText = "INSERT INTO clients(last_name, first_name, second_name, phone_number, email) values('"+ textBoxLastName.Text + "', '" + textBoxFirstName.Text + "', '" + textBoxSecondName.Text + "', '" + textBoxPhoneNumber.Text + "', '" + textBoxEmail.Text + "')";
-                CommandInsert.ExecuteNonQuery();
-                Client NewClient = new Client(CtrlClients.Clients.Count(), textBoxLastName.Text, textBoxFirstName.Text, textBoxSecondName.Text, textBoxPhoneNumber.Text, textBoxEmail.Text);
-                CtrlClients.Clients.Add(NewClient);
-                MessageBox.Show("Клиент добавлен");
-
-            }
-            
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error " + ex);
-            }
-
-            Connection.Close();
+            int ClientId = CtrlClients.Clients.Count();
+            string LastName = textBoxLastName.Text;
+            string FirstName = textBoxFirstName.Text;
+            string SecondName = textBoxSecondName.Text;
+            string PhoneNumber = textBoxPhoneNumber.Text;
+            string Email = textBoxEmail.Text;
+            CtrlClients.AddClientToDB(CtrlClients, ClientId, LastName, FirstName, SecondName, PhoneNumber, Email);
         }
     }
 }

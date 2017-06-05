@@ -47,7 +47,9 @@ namespace EduCentre
 
         private void buttonEditClient_Click(object sender, EventArgs e)
         {
-            //ManagerEditClientForm ManagerEditClientform = new ManagerEditClientForm(comboBoxClients.SelectedItem);
+            ManagerEditClientForm ManagerEditClientform = new ManagerEditClientForm(comboBoxClients.SelectedText);
+            this.Hide();
+            ManagerEditClientform.Show();
         }
     }
 }
