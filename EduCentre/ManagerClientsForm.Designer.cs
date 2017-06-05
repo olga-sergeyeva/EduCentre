@@ -69,6 +69,7 @@
             this.buttonEditClient.TabIndex = 1;
             this.buttonEditClient.Text = "Редактировать профиль клиента";
             this.buttonEditClient.UseVisualStyleBackColor = true;
+            this.buttonEditClient.Click += new System.EventHandler(this.buttonEditClient_Click);
             // 
             // buttonAddClientInGroup
             // 

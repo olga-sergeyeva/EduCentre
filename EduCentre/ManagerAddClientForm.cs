@@ -11,12 +11,14 @@ using System.Windows.Forms;
 
 namespace EduCentre
 {
-    public partial class ManagerAddClient : Form
+    public partial class ManagerAddClientForm : Form
     {
+        ControlClients CtrlClients = new ControlClients();
         private OleDbConnection Connection = new OleDbConnection();
-        public ManagerAddClient()
+        public ManagerAddClientForm()
         {
             InitializeComponent();
+
             Connection.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Visual Studio 2015\Projects\EduCentre\EdCentre.accdb;
 Persist Security Info=False;";
         }
@@ -37,7 +39,10 @@ Persist Security Info=False;";
                 CommandInsert.Connection = Connection;
                 CommandInsert.CommandText = "INSERT INTO clients(last_name, first_name, second_name, phone_number, email) values('"+ textBoxLastName.Text + "', '" + textBoxFirstName.Text + "', '" + textBoxSecondName.Text + "', '" + textBoxPhoneNumber.Text + "', '" + textBoxEmail.Text + "')";
                 CommandInsert.ExecuteNonQuery();
+                Client NewClient = new Client(CtrlClients.Clients.Count(), textBoxLastName.Text, textBoxFirstName.Text, textBoxSecondName.Text, textBoxPhoneNumber.Text, textBoxEmail.Text);
+                CtrlClients.Clients.Add(NewClient);
                 MessageBox.Show("Клиент добавлен");
+
             }
             
             catch(Exception ex)

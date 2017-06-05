@@ -1,6 +1,6 @@
 ﻿namespace EduCentre
 {
-    partial class ManagerAddClient
+    partial class ManagerAddClientForm
     {
         /// <summary>
         /// Required designer variable.

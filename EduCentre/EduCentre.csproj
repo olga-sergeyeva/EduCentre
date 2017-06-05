@@ -68,17 +68,23 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Group.cs" />
-    <Compile Include="ManagerAddClient.cs">
+    <Compile Include="ManagerAddClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerAddClient.Designer.cs">
-      <DependentUpon>ManagerAddClient.cs</DependentUpon>
+    <Compile Include="ManagerAddClientForm.Designer.cs">
+      <DependentUpon>ManagerAddClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerClientsForm.Designer.cs">
       <DependentUpon>ManagerClientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerEditClientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerEditClientForm.Designer.cs">
+      <DependentUpon>ManagerEditClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerMainForm.cs">
       <SubType>Form</SubType>
@@ -106,11 +112,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerAddClient.resx">
-      <DependentUpon>ManagerAddClient.cs</DependentUpon>
+    <EmbeddedResource Include="ManagerAddClientForm.resx">
+      <DependentUpon>ManagerAddClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerClientsForm.resx">
       <DependentUpon>ManagerClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerEditClientForm.resx">
+      <DependentUpon>ManagerEditClientForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>

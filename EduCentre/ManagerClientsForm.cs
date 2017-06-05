@@ -40,9 +40,14 @@ namespace EduCentre
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
-            ManagerAddClient ManagerAddClientForm = new ManagerAddClient();
+            ManagerAddClientForm ManagerAddClientform = new ManagerAddClientForm();
             this.Hide();
-            ManagerAddClientForm.Show();
+            ManagerAddClientform.Show();
+        }
+
+        private void buttonEditClient_Click(object sender, EventArgs e)
+        {
+            //ManagerEditClientForm ManagerEditClientform = new ManagerEditClientForm(comboBoxClients.SelectedItem);
         }
     }
 }
