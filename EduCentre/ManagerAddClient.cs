@@ -35,7 +35,7 @@ Persist Security Info=False;";
                 Connection.Open();
                 OleDbCommand CommandInsert = new OleDbCommand();
                 CommandInsert.Connection = Connection;
-                CommandInsert.CommandText = "INSERT INTO clients(last_name, first_name, second_name, phone_number, email) values('"+ textBoxLastName + "', '" + textBoxFirstName + "', '" + textBoxSecondName + "', '" + textBoxPhoneNumber + "', '" + textBoxEmail + "')";
+                CommandInsert.CommandText = "INSERT INTO clients(last_name, first_name, second_name, phone_number, email) values('"+ textBoxLastName.Text + "', '" + textBoxFirstName.Text + "', '" + textBoxSecondName.Text + "', '" + textBoxPhoneNumber.Text + "', '" + textBoxEmail.Text + "')";
                 CommandInsert.ExecuteNonQuery();
                 MessageBox.Show("Клиент добавлен");
             }
